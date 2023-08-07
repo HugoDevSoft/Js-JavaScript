@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos com funções</title>
+    <style>
+        div#area{
+            font: normal;
+            background-color: blueviolet;
+            color: white;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="area" onclick="clicar()" onmouseout="sair()" onmouseenter="entrar()">
+Interaja..
+    </div>
+<script>
+/*var uma = 1 // altera 
+let dois = 2 // altera e nao pode vim const junto
+const tres = 3 // valor não deve ser alterado*/
+
+
+let a = window.document.getElementById('area')
+
+function clicar(){
+    a.innerText = 'Clicou!'
+    a.style.background = 'black'
+    a.style.color = 'yellow'
+}
+
+function entrar(){
+    a.innerHTML = 'Entrou!'
+    a.style.background = 'grey'
+    a.style.color = 'black'
+}
+
+function sair(){
+    a.innerHTML = 'Saiu!'
+    a.style.background = 'green'
+}
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe_js</title>
+</head>
+<style>
+    div {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin: 50px;
+        gap: 15px;
+        color: white;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .quadrado {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+    }
+
+    p {
+        border-radius: 7px;
+        border: solid 3px black;
+    }
+
+    #azul {
+        background: blue;
+    }
+
+    #verde {
+        background: green;
+    }
+
+    #laranja {
+        background: orange;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: black;
+
+    }
+</style>
+
+<body id="body">
+    <h1>Escolhendo a cor e exibindo o seu significado</h1>
+
+
+<nav id="texto">hugo</nav>
+
+    <div>
+        <p id="azul" class="quadrado" onclick="viraazul()">Azul</p>
+        <p id="verde" class="quadrado" onclick="viraverde()">Verde</p>
+        <p id="laranja" class="quadrado" onclick="viralaranja()">Laranja</p>
+    </div>
+
+    <script>
+        let body = window.document.getElementById('body')
+        let azuzin = window.document.getElementById('azul')
+        let verdin = window.document.getElementById('verde')
+        let laranjin = window.document.getElementById('laranja')
+        let nav = window.document.getElementById('texto')
+
+        function viraazul() {
+            body.style.backgroundColor = 'blue'
+            document.body.classList.add('azul')
+            document.body.classList.remove('verde', 'laranja')
+            document.getElementById('texto').innerHTML = 'Azul lindo'  /*textContent é usado para adicionar um texto com um objeto */
+
+        }
+
+        function viraverde() {
+            body.style.backgroundColor = 'green'
+            document.body.classList.add('verde')
+            document.body.classList.remove('azul', 'laranja')
+            document.getElementById('texto').innerHTML = 'verde lindo'
+
+        }
+
+        function viralaranja() {
+            body.style.backgroundColor = 'orange'
+            document.body.classList.add('laranja')
+            document.body.classList.remove('azul', 'verde')
+            document.getElementById('texto').innerHTML = 'laranja lindo'
+
+        }
+    </script>
+
+
+</body>
+
+</html>
