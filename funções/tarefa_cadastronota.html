@@ -5,129 +5,65 @@
 
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CadastroNotas</title>
-
-
-
 </head>
-
-
 
 <style>
     * {
-
         font-family: cursive;
-
     }
-
-
 
     body {
-
         display: flex;
-
         justify-content: center;
-
         flex-direction: column;
-
         align-content: center;
-
         flex-wrap: wrap;
-
         max-width: 100%;
-
     }
-
-
-
-
 
     section {
-
         background-color: rgb(229, 240, 236);
-
         margin: 50px;
-
         box-shadow: grey 14px 14px 10px;
-
         padding: 10px;
-
         border-radius: 7px;
-
         display: flex;
-
         flex-direction: column;
-
         max-width: 840px;
-
         width: 100%;
-
     }
-
-
 
     .conteudo {
-
         display: flex;
-
         justify-content: flex-start;
-
     }
-
-
 
     option {
-
         background-color: rgb(124, 124, 124);
-
         color: rgb(148, 235, 19);
-
         display: flex;
-
     }
-
-
 
     aside {
-
         display: flex;
-
         flex-direction: row;
-
         align-items: center;
-
         gap: 15px;
-
     }
-
-
 
     h4 {
-
         display: flex;
-
         flex-direction: column;
-
         gap: 3px;
-
     }
-
-
 
     .input1 {
-
         width: 76px;
-
     }
-
-
 
     button {
         font-size: 20px;
@@ -148,101 +84,56 @@
 <body>
 
     <section class="secao1">
-
         <h1><i>Cadastro de Notas</i></h1>
 
-
-
         <article class="conteudo">
-
             <aside>
-
                 <h4 label for="nome1">Nome Completo:
-
                     <input required type="text" id="nome" name="nome" placeholder="Nome completo" pattern="[^0-9]*">
-
                 </h4>
-
-
 
                 <h4 label for="serie1">Série:
-
                     <input required type="tel" class="input1" id="serie" name="serie" placeholder="Sua Série"
                         maxlength="1">
-
                 </h4>
-
-
 
                 <h4 label for="materia1">Matéria:
-
                     <select id="materia" name="materia" class="input1">
-
                         <option hidden>Selecione</option>
-
                         <!--Com hidden ele não chega nen aparece na janela de opções e com selectecd disabled hidden ele aparece porém não clickavél ou seja um desabilita o opção de aparece ou desabilitar o click na janela-->
-
                         <option value="matematica">Matematica</option>
-
                         <option value="portugues">Português</option>
-
                     </select>
 
-
-
-
-
                 </h4>
-
             </aside>
-
         </article class="conteudo">
 
-
-
         <article class="conteudo">
-
             <aside>
-
                 <h4 label for="bimsetre">Bimetre 1
-
                     <input id="bim1" placeholder="Nota" class="input1" maxlength="2">
-
                 </h4>
-
                 <h4 label for="bimetre">Bimetre 2
-
                     <input id="bim2" placeholder="Nota" class="input1" maxlength="2">
-
                 </h4>
-
                 <h4 label for="bimetre">Bimetre 3
-
                     <input id="bim3" placeholder="Nota" class="input1" maxlength="2">
-
                 </h4>
                 <h4 label for="bimetre">Bimetre 4
                     <input id="bim4" placeholder="Nota" class="input1" maxlength="2">
                 </h4>
-
                 <h4 label for="media">Média
                     <input id="media1" placeholder="Sua média" class="input1" maxlength="2">
                 </h4>
                 <button onclick="calcularM()">Calcular Media</button>
                 <!--<input id="calcular" type="button" value="calcular">-->
-
             </aside>
-
         </article class="conteudo">
-
     </section>
 
-
-
     <section class="conteudo">
-
         <h1><i>Relatório</i></h1>
-
         <div class="menurel">
             <table>
                 <tr>
@@ -289,7 +180,7 @@
 
         function calcularM() {
             event.preventDefault()
-            media.value = ((parseFloat(bim1.value)+parseFloat(bim2.value)+parseFloat(bim3.value)+parseFloat(bim4.value)) / 4)
+            media.value = (parseFloat(bim1.value)+parseFloat(bim2.value)+parseFloat(bim3.value)+parseFloat(bim4.value) / 4)
 
             tbody.innerHTML = `<tr>
             <td>${nome.value}</td>
@@ -300,7 +191,6 @@
             <td>${bim3.value}</td>
             <td>${bim4.value}</td>
             <td>${media.value}</td>`
-
         }
     </script>
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Condicional</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="media">Estrutura Condicional</h1>
+    </div>
+
+    <script>
+        let nota1 = parseFloat(prompt("Primeira nota:"))
+        let nota2 = parseFloat(prompt("Segunda nota:"))
+        let media = (nota1 + nota2) / 2
+        console.log("A primeira nota foi:" + nota1 + ", e a segunda foi:" + nota2 + " \nLogo a média das notas " + media
+            .toFixed(2))
+
+        if (media >= 7) {
+            /*documento.('resultado').innerHTML = "Aprovado"}*/
+            console.log('APROVADO')
+        } else {
+            /*('resultado').innerHTML = "Reprovado"}*/
+            console.log('REPROVADO')
+        }
+
+        console.log("\n")
+        console.log("ENCADEADA")
+        /* Se a média for menor que 3, o desempenho será péssimo. 
+         Se a média for menor que 5, o desempenho será ruim
+         Se a média for menor que 7, o desempenho será regular
+         Se a média for menor que 9, o desempenho será bom
+         caso contrario, o desempenho será otimo*/
+
+        if (media < 3) {
+            console.log("péssimo")
+            document.getElementById("media").innerHTML = "péssimo"
+
+        } else if (media < 5) {
+            console.log("ruim")
+            document.getElementById("media").innerHTML = "ruim"
+        } else if (media < 7) {
+            console.log("regular")
+            document.getElementById("media").innerHTML = "regular"
+
+        } else if (media < 9) {
+            console.log("bom")
+            document.getElementById("media").innerHTML = "bom"
+
+        } else {
+            console.log("otimo")
+            document.getElementById("media").innerHTML = "otimo"
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

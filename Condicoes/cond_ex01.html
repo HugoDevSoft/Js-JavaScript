@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,17 +13,24 @@
     <p id="dia">Bom dia!</p>
     <p id="resultado"></p>
 
-
-
     <script>
-        let idade = 15
-        if (new Date().getHours() >14){
-            document.getElementById("dia").innerHTML = "Boa Tarde" 
+        let idade = 59
+        if (new Date().getHours() >= 14) {
+            document.getElementById("dia").innerHTML = "Boa Tarde"
         }
-
-        if(idade < 16 ){
+        /*if (idade <=16) {
             document.getElementById('resultado').innerHTML = "Não pode Votar!"
         }
+        else{
+            document.getElementById('resultado').innerHTML = "Pode Votar!"
+        }*/
+        if (idade <= 16 || idade >=60) {
+            document.getElementById('resultado').innerHTML = "Não pode Votar!"
+        }
+        else{
+            document.getElementById('resultado').innerHTML = "Pode Votar!"
+        }
+
     </script>
 
 </body>

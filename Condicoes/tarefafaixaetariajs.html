@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarefas faixa etaria</title>
+
+    <style>
+        section {
+            background-color: rgb(229, 240, 236);
+            margin: 50px;
+            box-shadow: grey 14px 14px 10px;
+            padding: 10px;
+            border-radius: 7px;
+            display: flex;
+            flex-direction: column;
+            max-width: 840px;
+            width: 100%;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+        }
+
+        h2 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button,
+        p {
+            width: 160px;
+            margin: 10px;
+            border: solid 2px black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: rgb(153, 154, 231);
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <h1>Faixa etaria</h1>
+        <h2>Coloque sua data de nascimento abaixo:</h2>
+        <header>
+            <input label for="" required type="date" id="datanascimento" name="nascimento"
+                placeholder="data de nascimento">
+            <button type="button" onclick="calcular()">Ver faixa etaria e idade</button>
+        </header>
+
+        <article>
+            <h2>Idades e suas classificações:</h2>
+            <div>de 0 a 3 anos -> Bebê</div>
+            <div>de 4 a 7 anos -> Criança</div>
+            <div>de 8 a 12 anos -> Pré-adolescente</div>
+            <div>de 13 a 19 anos -> Adolescente</div>
+            <div>de 20 a 59 anos -> Adulto</div>
+            <div>acima de 60 anos -> Idoso</div>
+        </article>
+        <br>
+        <aside>
+            <p id="suaidade" placeholder="sua idade" maxlength="2">idade</p>
+            <p id="faixaetaria" placeholder="faixa etaria" maxlength="15">faixaetaria</p>
+        </aside>
+
+    </section>
+
+    <script>
+        /*let nascimento = document.querySelector('input#datanascimento')*/
+         /*let nascimentoreal = Number.parseInt(nascimento);*/
+        let data = new Date();
+        let datareal = data.getFullYear();
+        let nascimento = new Date(datanascimento);
+        
+        
+        let idadesua = data.getFullYear() - nascimento.getFullYear();
+        
+        let dataNascimento = document.getElementById('dataNascimento').value;
+
+       
+        
+
+        suaidade.addEventListener('click', calcular)
+        alert('funcionou!')
+
+        function calcular() {
+            document.getElementById('suaidade').innerHTML = (idadesua)
+            /*document.getElementById('faixaetaria').innerHTML = `Sua faixaetaria é " +${idadesua}`*/
+            alert('funcionou click')
+        }
+        if (idadesua >= 0 && idadesua <= 3) {
+            document.getElementById("faixaetaria").innerHTML = "Bebê"
+
+        } else if (idadesua >= 4 && idadesua <= 7) {
+            document.getElementById("faixaetaria").innerHTML = "Criança"
+
+        } else if (idadesua <= 8 && idadesua <= 12) {
+            document.getElementById("faixaetaria").innerHTML = "Pré-adolescente"
+
+        } else if (idadesua <= 13 && idadesua <= 19) {
+            document.getElementById("faixaetaria").innerHTML = "Adolescente"
+
+        } else if (idadesua <= 20 && idadesua <= 59) {
+            document.getElementById("faixaetaria").innerHTML = "Adulto"
+
+        } else {
+            document.getElementById("faixaetaria").innerHTML = "Idoso"
+        }
+    </script>
+</body>
+
+</html>
