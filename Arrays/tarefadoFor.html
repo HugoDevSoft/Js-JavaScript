@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAREFAS DOS FOR</title>
+</head>
+<h1>1 - | Elaborar um programa que leia o nome de uma fruta e um número.</h1>
+<h2>O programa deve repetir a exibição do nome da fruta, de acordo com o número informado.</h2>
+<p id="vem"></p>
+
+
+<script>
+var infruta = window.prompt("Qual é sua fruta preferida?")
+var innumero = window.prompt("quantas frutas dessa vc come por dia?")
+var fruta = infruta.value;
+var numerof = Number(innumero.value);
+
+var resposta = " "
+
+
+for(var i = 0; i < numerof; i++){
+
+    //resposta = resposta + fruta
+    //console.log(resposta * fruta)
+    document.getElementById('vem').innerHTML = (resposta = resposta + fruta)
+   
+ } 
+ 
+
+</script>
+
+<body>
+
+</body>
+
+</html>
