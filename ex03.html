@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,28 +11,26 @@
 <body>
     <h1>Isso é JavaScript</h1>
     <script>
-"use strict";
-//Declarar as variáveis
-var curso = "Desenvolvedo Front-end, "
-var curso1 = "Desenvolvedo Back-end"
-var data = new Date() //  instanciando as funções.
-var dia = data.getDate()
-var mes = data.getMonth()+1
-var ano = data.getFullYear()
-//var dataCompleta = dia+"/0" +mes+ "/" +ano
-var dataCompletaSimplificada = data.toLocaleDateString()
-var nome = "Hugo";
-var idade = 32;
-//alert('funcionou!') o alert pode ser usado para a verificação do código
-document.write(curso)
-document.write(dataCompletaSimplificada)  //concatenação (+) juntar texto com variável, ou valores, ou somente variáveis
- 
-document.write("<p>Olá me chamo <b>"+nome+"</b>, tenho "+idade+" anos e hoje é "+dataCompletaSimplificada+" </p>");
+       "use strict";
+        //Declarar as variáveis
+        var curso = "Desenvolvedo Front-end, "
+        var curso1 = "Desenvolvedo Back-end"
+        var data = new Date() //  instanciando as funções.
+        var dia = data.getDate()
+        var mes = data.getMonth() + 1
+        var ano = data.getFullYear()
+        var dataCompleta = dia + "/0" + mes + "/" + ano //concatenação (+) juntar texto com variável, ou valores, ou somente variáveis
+        var anoatual = data.getFullYear()
+        var nome = "Hugo";
+        var idade = 32;
+        document.write(curso)
+        document.write(anoatual)
 
-console.log("Olá me chamo " +nome+", tenho "+idade+" anos e hoje é "+dataCompletaSimplificada)      
-console.log("Hoje é dia: "+dia)
-console.log("Hoje é o mês:" +mes)
+        document.write("<p>Olá me chamo <b>" + nome + "</b>, e tenho " + idade + " anos e hoje estamos no ano de " + anoatual);
+
+        console.log("Olá me chamo " + nome + ", e tenho " + idade + " anos e hoje estamos no ano de " + anoatual)
 
     </script>
 </body>
+
 </html>
