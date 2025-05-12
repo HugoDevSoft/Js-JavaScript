@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
-
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CadastroNotas</title>
+
 </head>
 
 <style>
@@ -25,8 +23,9 @@
         max-width: 100%;
     }
 
+
     section {
-        background-color: rgb(229, 240, 236);
+        background-color: rgb(2210, 240, 236);
         margin: 50px;
         box-shadow: grey 14px 14px 10px;
         padding: 10px;
@@ -43,8 +42,8 @@
     }
 
     option {
-        background-color: rgb(124, 124, 124);
-        color: rgb(148, 235, 19);
+        background-color: rgb(0, 0, 0);
+        color: rgb(214, 195, 18);
         display: flex;
     }
 
@@ -67,7 +66,7 @@
 
     button {
         font-size: 20px;
-        background-color: rgb(148, 235, 19);
+        background-color: rgb(148, 235, 110);
         border-radius: 7px;
     }
 
@@ -78,6 +77,13 @@
 
     tr {
         display: table-row;
+        display: flex;
+
+    }
+
+    th {
+        padding: 9px;
+        text-align: left;
     }
 </style>
 
@@ -88,20 +94,21 @@
 
         <article class="conteudo">
             <aside>
-                <h4 label for="nome1">Nome Completo:
-                    <input required type="text" id="nome" name="nome" placeholder="Nome completo" pattern="[^0-9]*">
+                <h4>
+                    <label for="rName">Nome Completo:</label>
+                    <input type="text" id="rName" name="nome" placeholder="Nome completo" required>
                 </h4>
 
                 <h4 label for="serie1">Série:
-                    <input required type="tel" class="input1" id="serie" name="serie" placeholder="Sua Série"
-                        maxlength="1">
+                    <input type="number" id="rSerie" min="1" max="10" class="input1" name="serie"
+                        placeholder="Sua Série" required>
                 </h4>
 
                 <h4 label for="materia1">Matéria:
-                    <select id="materia" name="materia" class="input1">
-                        <option hidden>Selecione</option>
+                    <select id="rMateria" name="materia" class="input1" required>
+                        <option value="">Selecione</option>
                         <!--Com hidden ele não chega nen aparece na janela de opções e com selectecd disabled hidden ele aparece porém não clickavél ou seja um desabilita o opção de aparece ou desabilitar o click na janela-->
-                        <option value="matematica">Matematica</option>
+                        <option value="matematica">Matemática</option>
                         <option value="portugues">Português</option>
                     </select>
 
@@ -111,95 +118,137 @@
 
         <article class="conteudo">
             <aside>
-                <h4 label for="bimsetre">Bimetre 1
-                    <input id="bim1" placeholder="Nota" class="input1" maxlength="2">
+                <h4 label for="Bimetre">Bimetre 1
+                    <input type="number" min="1" max="10" id="bim1" placeholder="Nota" class="input1">
                 </h4>
-                <h4 label for="bimetre">Bimetre 2
-                    <input id="bim2" placeholder="Nota" class="input1" maxlength="2">
+                +
+                <h4 label for="Bimetre">Bimetre 2
+                    <input type="number" min="1" max="10" id="bim2" placeholder="Nota" class="input1">
                 </h4>
-                <h4 label for="bimetre">Bimetre 3
-                    <input id="bim3" placeholder="Nota" class="input1" maxlength="2">
+                +
+                <h4 label for="Bimetre">Bimetre 3
+                    <input type="number" min="1" max="10" id="bim3" placeholder="Nota" class="input1">
                 </h4>
-                <h4 label for="bimetre">Bimetre 4
-                    <input id="bim4" placeholder="Nota" class="input1" maxlength="2">
+                +
+                <h4 label for="Bimetre">Bimetre 4
+                    <input type="number" min="1" max="10" id="bim4" placeholder="Nota" class="input1">
                 </h4>
-                <h4 label for="media">Média
-                    <input id="media1" placeholder="Sua média" class="input1" maxlength="2">
-                </h4>
-                <button onclick="calcularM()">Calcular Media</button>
-                <!--<input id="calcular" type="button" value="calcular">-->
+
+                <button onclick="myFunction()">Calcular Média</button>
             </aside>
         </article class="conteudo">
     </section>
 
     <section class="conteudo">
         <h1><i>Relatório</i></h1>
+
         <div class="menurel">
             <table>
                 <tr>
-                    <th>Nome Completo
-                        <input id="nome2" placeholder="Seu nome" maxnumber="2"></input>
+                    <th>
+                        Nome Completo<br>
+                        <span id="Name"></span>
                     </th>
-                    <th>Série
-                        <input id="serie2" placeholder="Série" maxnumber="2" class="input1"></input>
+                    <th>
+                        Série<br>
+                        <span id="Serie"></span>
                     </th>
-                    <th>Matéria
-                        <input id="materia2" placeholder="Matéria" maxnumber="2" class="input1"></input>
+                    <th>
+                        Matéria<br>
+                        <span id="rmateria"></span>
                     </th>
-                    <th>b1
-                        <input id="b12" placeholder="B1" maxnumber="2" class="input1"></input>
+                    <th>
+                        B1<br>
+                        <span id="rbim1"></span>
                     </th>
-                    <th>b2
-                        <input id="b22" placeholder="B2" maxnumber="2" class="input1"></input>
+                    <th>
+                        B2<br>
+                        <span id="rbim2"></span>
                     </th>
-                    <th>b3
-                        <input id="b32" placeholder="B3" maxnumber="2" class="input1"></input>
+                    <th>
+                        B3<br>
+                        <span id="rbim3"></span>
                     </th>
-                    <th>b4
-                        <input id="b42" placeholder="B4" maxnumber="2" class="input1"></input>
+                    <th>
+                        B4<br>
+                        <span id="rbim4"></span>
                     </th>
-                    <th>Média
-                        <input id="media2" placeholder="Sua Média" maxnumber="2" class="input1"></input>
+                    <th>
+                        Média<br>
+                        <span id="rMedia"></span>
+                    </th>
+                    <th>
+                        Aprovado ou <span style="text-align: center;color: #fa0404">Reprovado<br>
+                        <span id="rResultado"></span>
                     </th>
                 </tr>
-                <tbody></tbody>
             </table>
+
         </div>
-    </section class="conteudo">
+
+
+
+    </section>
 
     <script>
-        let nome = document.getElementById('nome')
-        let serie = document.getElementById('serie')
-        let materia = document.getElementById('materia')
-        let bim1 = document.getElementById('bim1')
-        let bim2 = document.getElementById('bim2')
-        let bim3 = document.getElementById('bim3')
-        let bim4 = document.getElementById('bim4')
-        let media = document.getElementById('media')
-        let tbody = document.getElementById('relatorio')
 
-        function calcularM() {
-            event.preventDefault()
-            media.value = (parseFloat(bim1.value)+parseFloat(bim2.value)+parseFloat(bim3.value)+parseFloat(bim4.value) / 4)
+        function myFunction() {
+            const name = document.getElementById('rName').value.trim();
+            const serie = document.getElementById('rSerie').value.trim();
+            const materia = document.getElementById('rMateria').value;
+            const bim1 = parseFloat(document.getElementById('bim1').value);
+            const bim2 = parseFloat(document.getElementById('bim2').value);
+            const bim3 = parseFloat(document.getElementById('bim3').value);
+            const bim4 = parseFloat(document.getElementById('bim4').value);
 
-            tbody.innerHTML = `<tr>
-            <td>${nome.value}</td>
-            <td>${serie.value}</td>
-            <td>${materia.value}</td>
-            <td>${bim1.value}</td>
-            <td>${bim2.value}</td>
-            <td>${bim3.value}</td>
-            <td>${bim4.value}</td>
-            <td>${media.value}</td>`
+            // Validações
+            if (name === "") {
+                alert("Por favor, preencha o nome completo.");
+                return;
+            }
+
+            if (serie === "" || isNaN(serie) || serie < 1) {
+                alert("Por favor, insira uma série válida (número a partir de 1).");
+                return;
+            }
+
+            if (materia === "") {
+                alert("Por favor, selecione uma matéria.");
+                return;
+            }
+
+            if (isNaN(bim1) || isNaN(bim2) || isNaN(bim3) || isNaN(bim4)) {
+                alert("Preencha todas as notas (B1 a B4) com valores válidos sendo ele 0 a 10 né amigo por favor ."); //alerta infomando o erro do usuario ter esquecido de colocar todas notas
+                return;
+            }
+
+            // Cálculo da média
+            const media = (bim1 + bim2 + bim3 + bim4) / 4;
+
+            // Atualização do relatório
+            document.getElementById('Name').innerHTML = name;
+            document.getElementById('Serie').innerHTML = serie;
+            document.getElementById('rmateria').innerHTML = materia;
+            document.getElementById('rbim1').innerHTML = bim1;
+            document.getElementById('rbim2').innerHTML = bim2;
+            document.getElementById('rbim3').innerHTML = bim3;
+            document.getElementById('rbim4').innerHTML = bim4;
+            document.getElementById('rMedia').innerHTML = media.toFixed(2);
+
+            if (media > 5) {
+                document.getElementById('rResultado').innerHTML = "<span style='color: green;'>Aprovado garoto</span>";
+                
+                return;
+            } else {
+                document.getElementById('rResultado').innerHTML = "Reprovado Novamente a 5º serie fernando "
+
+            }
         }
-    </script>
+        window.alert("VAMOS CALCULAR SUA MÉDIA PARA VER SE PASSOU OU NÃO DE ANO.");
 
+    </script>
 </body>
 
+
+
 </html>
-
-
-
-
-
-
